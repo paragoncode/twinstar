@@ -16,7 +16,7 @@ public class DetectsLight : MonoBehaviour
     {
         if (isLit)
         {
-            Debug.Log("I am lit");
+            Debug.Log("I am litt");
         }
         isLit = false;
     }
