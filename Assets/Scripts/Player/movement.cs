@@ -21,7 +21,7 @@ public class movement : MonoBehaviour
     private float moveInput = 0;
     [SerializeField] private float accelerationRate;
     [SerializeField] private float acceleration = 4;
-    [SerializeField] private float decceleration = 6;
+    [SerializeField] private float decceleration = 4;
     [SerializeField] private float jumpForce = 15;
     [SerializeField] private float defaultGravity = 4;
     [SerializeField] private float fastFallGravity = 8;
@@ -56,12 +56,14 @@ public class movement : MonoBehaviour
         }
         
         Walk();
+
         if (isPlayer1)
         {
             if (collision.onGround || collision.onPlayer2)
             {
                 canJump = true;
-            } else{
+            } else
+            {
                 canJump = false;
             }
         } else
@@ -129,12 +131,24 @@ public class movement : MonoBehaviour
         float targetSpeed = moveInput * moveSpeed;
         float speedDifference = targetSpeed - rb.velocity.x;
 
-        if (Mathf.Abs(targetSpeed) > 0) 
+        if (Mathf.Abs(targetSpeed) > 0 && Mathf.Abs(targetSpeed) > Mathf.Abs(rb.velocity.x)) 
         {
+            if (collision.onGround)
+            {
             accelerationRate = acceleration;
+            } else
+            {
+                accelerationRate = acceleration / 2;
+            }
         } else
         {
+            if (collision.onGround)
+            {
             accelerationRate = decceleration;
+            } else
+            {
+                accelerationRate = decceleration / 10;
+            }
         }
         float movement = speedDifference * accelerationRate;
 
