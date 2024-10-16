@@ -12,10 +12,14 @@ public class Attackarea : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField] private int attackForce = 20;
+    [SerializeField] private int knockbackForce = 10;
     [SerializeField] private Vector2 hitboxSizeHorizontal = new Vector2(2, 1.5f);
     [SerializeField] private Vector2 hitboxSizeVertical = new Vector2(2, 2);
     private Vector2 hitboxSize;
     private Vector2 hitboxOffset;
+
+    private int conditionalKnockbackForce;
+    private int conditionalAttackForce;
 
     void Update()
     {
@@ -35,16 +39,21 @@ public class Attackarea : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        
-        //checks if player is facing either left or right, or up or down and assigns propper values to hitbox size and offset
-        
 
         if (collider.GetComponent<Hitable>() != null)
         {
-            Debug.Log("hit"); 
             Rigidbody2D colliderRb = collider.GetComponent<Rigidbody2D>();
-
-            colliderRb.AddForce(transform.parent.GetComponent<movement>().facingDirection * attackForce, ForceMode2D.Impulse);
+            if (transform.parent.GetComponent<Collision>().onGround)
+            {
+                conditionalKnockbackForce = knockbackForce / 2;
+                conditionalAttackForce = attackForce;
+            } else
+            {
+                conditionalAttackForce = attackForce / 2;
+                conditionalKnockbackForce = knockbackForce;
+            }
+            colliderRb.AddForce(transform.parent.GetComponent<movement>().facingDirection * conditionalAttackForce, ForceMode2D.Impulse);
+            transform.parent.GetComponent<Rigidbody2D>().AddForce(transform.parent.GetComponent<movement>().facingDirection * -1 * conditionalKnockbackForce, ForceMode2D.Impulse);
         }
     }
 }
