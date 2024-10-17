@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Light puzzle test scene.unity
     guid: 119c07ac0e9c55941bd4dcf4a2bb2d32
+  - enabled: 0
+    path: Assets/Scenes/OutroCutscene.unity
+    guid: 4c28b925d308c834e88646fd2f02e58a
   m_configObjects: {}

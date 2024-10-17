@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 562378740196762273}
   - component: {fileID: 5966301875398978183}
   - component: {fileID: 684864763715741348}
+  - component: {fileID: 6171018458941300681}
+  - component: {fileID: 820554112508898245}
   m_Layer: 7
   m_Name: Player 1
   m_TagString: Player
@@ -218,7 +220,9 @@ MonoBehaviour:
   downInput: 115
   rb: {fileID: 6965329622717285087}
   collision: {fileID: 562378740196762273}
+  spriteRenderer: {fileID: 8891185286232809698}
   moveSpeed: 8
+  moveInput: 0
   accelerationRate: 0
   acceleration: 4
   decceleration: 4
@@ -269,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackButton: 102
+  attacking: 0
 --- !u!114 &684864763715741348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +286,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a6972c4337e8e4bab7dc36b1df7791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6171018458941300681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3607348366002894489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8139fb6526d82cb46928aee15b6a9915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 820554112508898245}
+  movement: {fileID: 1034240567735019400}
+  collision: {fileID: 562378740196762273}
+  rb: {fileID: 6965329622717285087}
+  playerAttack: {fileID: 5966301875398978183}
+--- !u!95 &820554112508898245
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3607348366002894489}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e9bfad4337a53e142a9d6bfc170180ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8534543793273922823
 GameObject:
   m_ObjectHideFlags: 0

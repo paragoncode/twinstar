@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using Unity.Burst.Intrinsics;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    [SerializeField] private bool isPlayer1;
+    [SerializeField] public bool isPlayer1;
     [SerializeField] private KeyCode leftInput;
     [SerializeField] private KeyCode rightInput;
     [SerializeField] private KeyCode upInput;
@@ -17,8 +18,9 @@ public class movement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collision collision;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float moveSpeed = 10;
-    private float moveInput = 0;
+    public float moveInput = 0;
     [SerializeField] private float accelerationRate;
     [SerializeField] private float acceleration = 4;
     [SerializeField] private float decceleration = 4;
@@ -30,7 +32,7 @@ public class movement : MonoBehaviour
     private bool doJump = false;
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float coyoteTimeCounter;
-    private bool isFacingRight;
+    private bool isFacingRight = false;
     public UnityEngine.Vector2 facingDirection;
     
     
@@ -47,14 +49,20 @@ public class movement : MonoBehaviour
         if (Input.GetKey(leftInput))
         {
             moveInput = -1;
-            isFacingRight = false;
         } else if (Input.GetKey(rightInput))
         {
             moveInput = 1;
-            isFacingRight = true;
         } else
         {
             moveInput = 0;
+        }
+
+        if (moveInput == -1 && isFacingRight)
+        {
+            Flip();
+        } else if (moveInput == 1 && !isFacingRight)
+        {
+            Flip();
         }
 
         if (isPlayer1)
@@ -85,16 +93,18 @@ public class movement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
+        // INPUT USED FOR JUMPING
         if (Input.GetKeyDown(upInput) && coyoteTimeCounter > 0)
         {
             doJump = true;
         }
 
+        // INPUT USED FOR GRAVITY CONTROL
         if (Input.GetKeyUp(upInput) || rb.velocity.y < -5)
         {
             doFastFall = true;
         }
-        
+
         HandleOrientation();
     }
     private void FixedUpdate()
@@ -107,6 +117,13 @@ public class movement : MonoBehaviour
         }
 
         HandleGravity();
+    }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+
+        spriteRenderer.flipX = !isFacingRight;
     }
 
     private void HandleOrientation()
