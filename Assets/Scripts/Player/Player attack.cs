@@ -10,7 +10,7 @@ public class Playerattack : MonoBehaviour
     private GameObject attackArea = default;
     private bool attacking = false;
 
-    private float timeToAttack = 0.5f;
+    private float timeToAttack = 0.3f;
     private float timer = 0f;
 
     private Vector2 attackDirection;
@@ -19,13 +19,11 @@ public class Playerattack : MonoBehaviour
     void Start()
     {
         attackArea = transform.GetChild(0).gameObject;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(attackButton))
         {
             Attack();
