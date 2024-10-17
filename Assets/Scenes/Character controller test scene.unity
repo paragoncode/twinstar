@@ -167,7 +167,7 @@ MonoBehaviour:
   moveSpeed: 8
   accelerationRate: 0
   acceleration: 4
-  decceleration: 6
+  decceleration: 4
   jumpForce: 15
   defaultGravity: 4
   fastFallGravity: 8
@@ -552,6 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bc: {fileID: 684444865}
   attackForce: 20
+  knockbackForce: 10
   hitboxSizeHorizontal: {x: 2, y: 1.5}
   hitboxSizeVertical: {x: 2, y: 2}
 --- !u!1 &760064449
@@ -926,7 +927,7 @@ MonoBehaviour:
   moveSpeed: 8
   accelerationRate: 0
   acceleration: 4
-  decceleration: 6
+  decceleration: 4
   jumpForce: 15
   defaultGravity: 4
   fastFallGravity: 8
@@ -1795,6 +1796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bc: {fileID: 1603869879}
   attackForce: 20
+  knockbackForce: 10
   hitboxSizeHorizontal: {x: 2, y: 1.5}
   hitboxSizeVertical: {x: 2, y: 2}
 --- !u!61 &1603869879
