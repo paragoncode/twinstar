@@ -18,6 +18,13 @@ public class Interactable : MonoBehaviour
     public float speed;
     private int direction = 1;
 
+    public Animator anim;
+    // Use this for initialization
+    void Start()
+    {
+     anim = gameObject.GetComponent<Animator>();
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -30,10 +37,16 @@ public class Interactable : MonoBehaviour
 
                 float distance = (target - (Vector2)platform.position).magnitude;
 
+                anim.Play("Flip Green");
+
                 if (distance <= 0.2f)
                 {
                     direction *= -1;
                 }
+            }
+            else
+            {
+                anim.Play("Flip Red");
             }
         } 
     }
