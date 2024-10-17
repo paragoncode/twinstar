@@ -25,7 +25,9 @@ public class movement : MonoBehaviour
     [SerializeField] private float jumpForce = 15;
     [SerializeField] private float defaultGravity = 4;
     [SerializeField] private float fastFallGravity = 8;
+    private bool doFastFall = false;
     private bool canJump;
+    private bool doJump = false;
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float coyoteTimeCounter;
     private bool isFacingRight;
@@ -54,8 +56,6 @@ public class movement : MonoBehaviour
         {
             moveInput = 0;
         }
-        
-        Walk();
 
         if (isPlayer1)
         {
@@ -76,7 +76,7 @@ public class movement : MonoBehaviour
                 canJump = false;
             }
         }
-
+        
         if (canJump)
         {
             coyoteTimeCounter = coyoteTime;
@@ -84,13 +84,28 @@ public class movement : MonoBehaviour
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
-        
+
         if (Input.GetKeyDown(upInput) && coyoteTimeCounter > 0)
+        {
+            doJump = true;
+        }
+
+        if (Input.GetKeyUp(upInput) || rb.velocity.y < -5)
+        {
+            doFastFall = true;
+        }
+        
+        HandleOrientation();
+    }
+    private void FixedUpdate() 
+    {        
+        Walk();
+        
+        if (doJump)
         {
             Jump();
         }
         
-        HandleOrientation();
         HandleGravity();
     }
 
@@ -112,8 +127,9 @@ public class movement : MonoBehaviour
     }
     private void HandleGravity()
     {
-        if (Input.GetKeyUp(upInput) || rb.velocity.y < -5)
+        if (doFastFall)
         {
+            doFastFall = false;
             rb.gravityScale = fastFallGravity;
             coyoteTimeCounter = 0;
         } else if (canJump)
@@ -123,6 +139,7 @@ public class movement : MonoBehaviour
     }
     private void Jump() 
     {        
+        doJump = false;
         rb.AddForce(UnityEngine.Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
