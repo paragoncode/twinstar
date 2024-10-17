@@ -27,11 +27,11 @@ public class Attackarea : MonoBehaviour
         if (facingDirection == new Vector2(0,-1) || facingDirection == new Vector2(0,1)) // is player facing up or down?
         {
             hitboxSize = hitboxSizeVertical;
-            hitboxOffset = new Vector2(0, hitboxSize.y / 2 * 1.5f * transform.parent.GetComponent<movement>().facingDirection.y );
+            hitboxOffset = new Vector2(0, hitboxSize.y / 2 * 1.5f * facingDirection.y );
         }else // is player facing left or right?
         {
             hitboxSize = hitboxSizeHorizontal;
-            hitboxOffset = new Vector2(hitboxSize.x / 2 * 1.5f * transform.parent.GetComponent<movement>().facingDirection.x, (hitboxSize.y - 1) / 2);
+            hitboxOffset = new Vector2(hitboxSize.x / 2 * 1.5f * facingDirection.x, (hitboxSize.y / 2) / 2);
         } 
 
         bc.size = hitboxSize;
