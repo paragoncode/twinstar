@@ -12,6 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroCutscene.unity
     guid: 08e64d40dc108b949b60684529cf5f9b
   - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 7de5a1a3bc43f23448603d0a41a7e0c2
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: dc0d77e5408e7b2459abf4ca41e672fc
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 4bca9b58f26a09a498362680f0f05184
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: 95c8d16eea910a64c9e8d784c3ac6f7e
+  - enabled: 1
     path: Assets/Scenes/Character controller test scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
