@@ -536,6 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 495285027}
   - component: {fileID: 495285026}
+  - component: {fileID: 495285028}
   m_Layer: 0
   m_Name: cutsceneBackground4
   m_TagString: Untagged
@@ -610,6 +611,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &495285028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495285025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4567b0bcf30654194d143844bca425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTime: 15
 --- !u!1001 &739816438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -624,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 801e9e49bca6d754cb16cb1c2e1fd0da, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 801e9e49bca6d754cb16cb1c2e1fd0da, type: 3}
       propertyPath: m_LocalScale.x

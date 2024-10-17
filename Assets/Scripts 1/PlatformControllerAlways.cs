@@ -46,4 +46,9 @@ public class platformControllerAlways : MonoBehaviour
             Gizmos.DrawLine(platformAlways.position, endAlwaysPoint.position);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        collision.transform.SetParent(transform);
+    }
 }
