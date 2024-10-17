@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 70af820f719d56c4ba7bcd5f6b84d873
+guid: 83f5868eed271db4193ad4bb7868ed75
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -150,7 +150,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Vase 2
+    - name: Vase til Christian
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
