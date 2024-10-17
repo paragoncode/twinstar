@@ -9,7 +9,7 @@ public class SceneTrigger : MonoBehaviour
 {
     if (collision.gameObject.CompareTag("Player")) 
         {
-         SceneManager.LoadScene(2);
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
          Debug.Log("alfhlkh");
         } 
 }
