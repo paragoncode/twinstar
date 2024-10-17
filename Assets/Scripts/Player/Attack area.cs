@@ -38,8 +38,8 @@ public class Attackarea : MonoBehaviour
         bc.offset = hitboxOffset;
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) {
-
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
         if (collider.GetComponent<Hitable>() != null)
         {
             Rigidbody2D colliderRb = collider.GetComponent<Rigidbody2D>();

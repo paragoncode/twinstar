@@ -8,9 +8,9 @@ public class Playerattack : MonoBehaviour
     [SerializeField] UnityEngine.KeyCode attackButton;
 
     private GameObject attackArea = default;
-    private bool attacking = false;
+    public bool attacking = false;
 
-    private float timeToAttack = 0.3f;
+    private float timeToAttack = 0.175f;
     private float timer = 0f;
 
     private Vector2 attackDirection;
