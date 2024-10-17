@@ -43,9 +43,6 @@ public class Collision : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-
-        var positions = new Vector2[] { bottomOffset, rightOffset, leftOffset };
-
         Gizmos.DrawWireSphere((Vector2)transform.position  + bottomOffset, collisionRadius);
     }
 }

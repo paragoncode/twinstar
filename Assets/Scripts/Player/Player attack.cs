@@ -10,7 +10,7 @@ public class Playerattack : MonoBehaviour
     private GameObject attackArea = default;
     private bool attacking = false;
 
-    private float timeToAttack = 0.5f;
+    private float timeToAttack = 0.15f;
     private float timer = 0f;
 
     private Vector2 attackDirection;

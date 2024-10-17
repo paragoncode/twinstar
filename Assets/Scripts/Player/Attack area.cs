@@ -11,21 +11,25 @@ public class Attackarea : MonoBehaviour
     [SerializeField] private BoxCollider2D bc;
 
     [Header("Stats")]
-    [SerializeField] private int attackForce = 20;
+    private int attackForce = 8;
+    private int knockbackForce = -4;
     [SerializeField] private Vector2 hitboxSizeHorizontal = new Vector2(2, 1.5f);
     [SerializeField] private Vector2 hitboxSizeVertical = new Vector2(2, 2);
     private Vector2 hitboxSize;
     private Vector2 hitboxOffset;
 
+    private int conditionalKnockbackForce;
+    private int conditionalAttackForce;
+
     void Update()
     {
         Vector2 facingDirection = new Vector2(transform.parent.GetComponent<movement>().facingDirection.x, transform.parent.GetComponent<movement>().facingDirection.y);
-        if (facingDirection == new Vector2(0,-1) || facingDirection == new Vector2(0,1))
+        if (facingDirection == new Vector2(0,-1) || facingDirection == new Vector2(0,1)) // is player facing up or down?
         {
             hitboxSize = hitboxSizeVertical;
             hitboxOffset = new Vector2(0, hitboxSize.y / 2 * 1.5f * transform.parent.GetComponent<movement>().facingDirection.y );
-        }else /*(facingDirection == new Vector2(-1,0) || facingDirection == new Vector2(1,0))
-        */{
+        }else // is player facing left or right?
+        {
             hitboxSize = hitboxSizeHorizontal;
             hitboxOffset = new Vector2(hitboxSize.x / 2 * 1.5f * transform.parent.GetComponent<movement>().facingDirection.x, (hitboxSize.y - 1) / 2);
         } 
@@ -35,16 +39,27 @@ public class Attackarea : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        
-        //checks if player is facing either left or right, or up or down and assigns propper values to hitbox size and offset
-        
 
         if (collider.GetComponent<Hitable>() != null)
         {
-            Debug.Log("hit"); 
             Rigidbody2D colliderRb = collider.GetComponent<Rigidbody2D>();
+            if (transform.parent.GetComponent<Collision>().onGround)
+            {
+                conditionalKnockbackForce = knockbackForce / 2;
+                conditionalAttackForce = attackForce;
+            } else
+            {
+                conditionalAttackForce = attackForce / 2;
+                conditionalKnockbackForce = knockbackForce;
+            }
 
-            colliderRb.AddForce(transform.parent.GetComponent<movement>().facingDirection * attackForce, ForceMode2D.Impulse);
+            Vector2 totalAttackForce = transform.parent.GetComponent<movement>().facingDirection * conditionalAttackForce;
+            Vector2 totalKnockbackForce = transform.parent.GetComponent<movement>().facingDirection * conditionalKnockbackForce;
+            
+            Debug.Log("force added: " + totalAttackForce);
+
+            colliderRb.AddForce(totalAttackForce, ForceMode2D.Impulse);
+            transform.parent.GetComponent<Rigidbody2D>().AddForce(totalKnockbackForce, ForceMode2D.Impulse);
         }
     }
 }
