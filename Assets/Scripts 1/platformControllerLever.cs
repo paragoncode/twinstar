@@ -14,7 +14,7 @@ public class platformControllerLever : MonoBehaviour
 
     public void Update()
     {
-        if (interactableScript.isInRange = true) // Platform should move only when isMoving is true
+        if (interactableScript.isInRange == true) // Platform should move only when isMoving is true
         {
             Vector2 target = currentMovementTarget();
             platform.position = Vector2.Lerp(platform.position, target, speed * Time.deltaTime);

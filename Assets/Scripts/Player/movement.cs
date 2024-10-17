@@ -97,15 +97,15 @@ public class movement : MonoBehaviour
         
         HandleOrientation();
     }
-    private void FixedUpdate() 
-    {        
+    private void FixedUpdate()
+    {
         Walk();
-        
+
         if (doJump)
         {
             Jump();
         }
-        
+
         HandleGravity();
     }
 
