@@ -47,4 +47,23 @@ public class platformController : MonoBehaviour
             Gizmos.DrawLine(platform.position, endPoint.position);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player entered platform");
+            // Set the player as a child of the platform
+            collision.transform.SetParent(platform);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Remove the player from the platform when they exit
+            collision.transform.SetParent(null);
+        }
+    }
 }

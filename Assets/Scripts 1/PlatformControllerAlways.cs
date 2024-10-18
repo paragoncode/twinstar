@@ -14,13 +14,13 @@ public class platformControllerAlways : MonoBehaviour
     private void Update()
     {
         Vector2 target = currentMovementTarget(); // Platform should move only when isMoving is true
-        
+
         platformAlways.position = Vector2.Lerp(platformAlways.position, target, speed * Time.deltaTime);
 
         float distance = (target - (Vector2)platformAlways.position).magnitude;
 
         if (distance <= 0.2f)
-        
+
         {
             direction *= -1;
         }
@@ -47,8 +47,22 @@ public class platformControllerAlways : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.transform.SetParent(transform);
+        Debug.Log("Enter");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Set the player as a child of the platform
+            collision.transform.SetParent(platformAlways);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Remove the player from the platform when they exit
+            collision.transform.SetParent(null);
+        }
     }
 }

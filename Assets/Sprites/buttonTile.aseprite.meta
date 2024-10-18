@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83f5868eed271db4193ad4bb7868ed75
+guid: 12275af054fa5b74f81c8e6a33049ab9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 32
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Vase til Christian
+  - name: buttonTile
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -130,9 +130,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 26
-      height: 29
-    spriteID: 4abcad17261a62841a1307074b367d06
+      width: 32
+      height: 8
+    spriteID: a152e0ed53861974493fe9e8bf8188b9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,21 +144,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1702625003
-    name: Vase til Christian
+    guid: -1200847238
+    name: buttonTile
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Vase til Christian
+    - name: buttonTile
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 3
+        x: 0
         y: 0
-        width: 26
-        height: 29
-      spriteId: 4abcad17261a62841a1307074b367d06
+        width: 32
+        height: 8
+      spriteId: a152e0ed53861974493fe9e8bf8188b9
     linkedCells: []
     parentIndex: -1
   platformSettings:

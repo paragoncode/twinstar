@@ -57,6 +57,7 @@ public class Interactable : MonoBehaviour
         {
             isInRange = true;
             Debug.Log("Player is in range");
+            //collision.transform.SetParent(platform);
         }
     }
 
@@ -66,6 +67,7 @@ public class Interactable : MonoBehaviour
         {
             isInRange = false;
             Debug.Log("Player is not in range");
+            //collision.transform.SetParent(null);
         }
     }
 

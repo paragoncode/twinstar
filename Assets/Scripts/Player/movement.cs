@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using Unity.Burst.Intrinsics;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class movement : MonoBehaviour
@@ -22,8 +21,8 @@ public class movement : MonoBehaviour
     [SerializeField] private float moveSpeed = 10;
     public float moveInput = 0;
     [SerializeField] private float accelerationRate;
-    [SerializeField] private float acceleration = 4;
-    [SerializeField] private float decceleration = 4;
+    private float acceleration = 4;
+    private float decceleration = 8;
     [SerializeField] private float jumpForce = 15;
     [SerializeField] private float defaultGravity = 4;
     [SerializeField] private float fastFallGravity = 8;
