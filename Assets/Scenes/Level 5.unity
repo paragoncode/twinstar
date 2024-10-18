@@ -131,32 +131,52 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 229556312781257330, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8125
+      objectReference: {fileID: 0}
+    - target: {fileID: 229556312781257330, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.90625
+      objectReference: {fileID: 0}
+    - target: {fileID: 229556312781257330, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7629322570578408754, guid: 83f5868eed271db4193ad4bb7868ed75, type: 3}
+      objectReference: {fileID: 1110726253628140658, guid: 83f5868eed271db4193ad4bb7868ed75, type: 3}
+    - target: {fileID: 229556312781257330, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_Size.x
-      value: 1.4756229
+      value: 3.0792198
       objectReference: {fileID: 0}
     - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_Size.y
-      value: 0.29687217
+      value: 0.9182663
       objectReference: {fileID: 0}
     - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_Offset.x
-      value: -0.28247225
+      value: -0.0018405914
       objectReference: {fileID: 0}
     - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_Offset.y
-      value: 0.14843608
+      value: 0.45913315
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.8125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.90625
       objectReference: {fileID: 0}
     - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.26
+      value: 0.8125
       objectReference: {fileID: 0}
     - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.29
+      value: 0.90625
       objectReference: {fileID: 0}
     - target: {fileID: 5891436392114470398, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_Name
@@ -164,11 +184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6642647412773819803, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6642647412773819803, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6642647412773819803, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -97136,7 +97156,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.398291
+  orthographic size: 5.4105716
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -97405,7 +97425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5ec8726a5359e43b7a38dcdd73fb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Respawn: 6
+  Respawn: 7
 --- !u!483693784 &2118369729
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -97933,7 +97953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5ec8726a5359e43b7a38dcdd73fb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Respawn: 6
+  Respawn: 7
 --- !u!61 &2137845559
 BoxCollider2D:
   m_ObjectHideFlags: 0

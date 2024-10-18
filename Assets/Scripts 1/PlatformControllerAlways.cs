@@ -49,11 +49,10 @@ public class platformControllerAlways : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Enter");
         if (collision.gameObject.CompareTag("Player"))
         {
             // Set the player as a child of the platform
-            collision.transform.SetParent(platformAlways);
+            //collision.transform.SetParent(platformAlways);
         }
     }
 
@@ -62,7 +61,7 @@ public class platformControllerAlways : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Remove the player from the platform when they exit
-            collision.transform.SetParent(null);
+            //collision.transform.SetParent(null);
         }
     }
 }

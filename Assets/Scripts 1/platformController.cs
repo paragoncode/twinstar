@@ -54,7 +54,7 @@ public class platformController : MonoBehaviour
         {
             Debug.Log("Player entered platform");
             // Set the player as a child of the platform
-            collision.transform.SetParent(platform);
+            //collision.transform.SetParent(platform);
         }
     }
 
@@ -63,7 +63,7 @@ public class platformController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Remove the player from the platform when they exit
-            collision.transform.SetParent(null);
+            //collision.transform.SetParent(null);
         }
     }
 }
