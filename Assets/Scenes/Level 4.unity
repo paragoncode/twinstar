@@ -128749,17 +128749,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 229556312781257330, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7629322570578408754, guid: 83f5868eed271db4193ad4bb7868ed75, type: 3}
     - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_Size.x
-      value: 1.8858261
+      value: 0.61836386
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5129646
       objectReference: {fileID: 0}
     - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0047187805
+      value: -0.027574778
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2564823
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509892906258324220, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 5891436392114470398, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_Name
       value: Vase 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642647412773819803, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642647412773819803, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6642647412773819803, guid: 6a3e093e106707d468dfad3f3b947bfa, type: 3}
       propertyPath: m_LocalPosition.x
