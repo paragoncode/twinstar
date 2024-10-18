@@ -11,8 +11,8 @@ public class Attackarea : MonoBehaviour
     [SerializeField] private BoxCollider2D bc;
 
     [Header("Stats")]
-    private int attackForce = 8;
-    private int knockbackForce = -4;
+    private int attackForce = 4;
+    private int knockbackForce = -2;
     [SerializeField] private Vector2 hitboxSizeHorizontal = new Vector2(2, 1.5f);
     [SerializeField] private Vector2 hitboxSizeVertical = new Vector2(2, 2);
     private Vector2 hitboxSize;
