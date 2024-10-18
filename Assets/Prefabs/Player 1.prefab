@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: -4730553789714008600, guid: e377e245b95045e4f9f1dbe0e0a989f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -224,8 +224,6 @@ MonoBehaviour:
   moveSpeed: 8
   moveInput: 0
   accelerationRate: 0
-  acceleration: 4
-  decceleration: 4
   jumpForce: 15
   defaultGravity: 4
   fastFallGravity: 8

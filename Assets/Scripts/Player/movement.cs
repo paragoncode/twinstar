@@ -11,7 +11,6 @@ public class movement : MonoBehaviour
     [SerializeField] private KeyCode leftInput;
     [SerializeField] private KeyCode rightInput;
     [SerializeField] private KeyCode upInput;
-    
     [SerializeField] private KeyCode downInput;
 
     [Header("everything else")]
@@ -131,10 +130,10 @@ public class movement : MonoBehaviour
         if (Input.GetKey(upInput))
         {
             facingDirection = new UnityEngine.Vector2(0,1);
-        } else if (Input.GetKey(downInput) && !collision.onGround)
+        } /*else if (Input.GetKey(downInput) && !collision.onGround)
         {
             facingDirection = new UnityEngine.Vector2(0,-1);
-        } else if (isFacingRight)
+        } */else if (isFacingRight)
         {
             facingDirection = new UnityEngine.Vector2(1,0);
         } else
@@ -167,22 +166,47 @@ public class movement : MonoBehaviour
 
         if (Mathf.Abs(targetSpeed) > 0 && Mathf.Abs(targetSpeed) > Mathf.Abs(rb.velocity.x)) 
         {
-            if (collision.onGround)
+            if (isPlayer1)
             {
-            accelerationRate = acceleration;
+               if (collision.onGround || collision.onPlayer2)
+                {
+                accelerationRate = acceleration;
+                } else
+                {
+                    accelerationRate = acceleration / 2;
+                } 
             } else
             {
-                accelerationRate = acceleration / 2;
-            }
+                if (collision.onGround || collision.onPlayer1)
+                {
+                accelerationRate = acceleration;
+                } else
+                {
+                    accelerationRate = acceleration / 2;
+                } 
+            }            
         } else
         {
-            if (collision.onGround)
+            if (isPlayer1)
             {
-            accelerationRate = decceleration;
+                if (collision.onGround || collision.onPlayer2)
+                {
+                accelerationRate = decceleration;
+                } else
+                {
+                    accelerationRate = decceleration / 10;
+                }
             } else
-            {
-                accelerationRate = decceleration / 10;
+            {  
+                if (collision.onGround || collision.onPlayer1)
+                {
+                accelerationRate = decceleration;
+                } else
+                {
+                    accelerationRate = decceleration / 10;
+                }
             }
+
         }
         float movement = speedDifference * accelerationRate;
 
